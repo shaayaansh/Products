@@ -1,8 +1,9 @@
 package com.example.products.priceplans;
 
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import com.example.products.productOfferings.ProductOffering;
+
+import javax.persistence.*;
 
 @Entity
 public class PricePlan {
@@ -10,6 +11,10 @@ public class PricePlan {
     private String id;
     private String name;
     private String description;
+
+    @ManyToOne
+    //@JoinColumn(name = "product_offering_id")
+    private ProductOffering productOffering;
 
     public PricePlan() {
     }

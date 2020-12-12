@@ -1,11 +1,10 @@
 package com.example.products.product;
 
+import com.example.products.productOfferings.ProductOffering;
 import org.hibernate.annotations.GenericGenerator;
+import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Product {
@@ -13,6 +12,9 @@ public class Product {
     private String id;
     private String name;
     private String description;
+
+    @ManyToMany
+    private List<ProductOffering> productOfferings;
 
     public Product() {
 

@@ -1,7 +1,11 @@
 package com.example.products.productOfferings;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import com.example.products.priceplans.PricePlan;
+import com.example.products.product.Product;
+
+import javax.persistence.*;
+import java.util.List;
+
 
 @Entity
 public class ProductOffering {
@@ -9,6 +13,11 @@ public class ProductOffering {
     private String id;
     private String name;
     private String description;
+    @OneToMany()
+    private List<PricePlan> pricePlans;
+
+    @ManyToMany()
+    private List<Product> products;
 
     public ProductOffering() {
     }
